@@ -29,6 +29,7 @@ public class Libro
         this.setEdicion(p_edicion);
         this.setEditorial(p_editorial);
         this.setAnio(p_anio);
+        this.setUltimoPrestamo(null)
     }
     
      public Libro(String p_titulo,int p_edicion,String p_editorial,int p_anio,Prestamo p_prestamo){
@@ -36,10 +37,10 @@ public class Libro
         this.setEdicion(p_edicion);
         this.setEditorial(p_editorial);
         this.setAnio(p_anio);
-        this.setPrestamo(p_prestamo);
+        this.setUltimoPrestamo(p_prestamo);
     }
     
-    private void setPrestamo(Prestamo p_prestamo){
+    private void setUltimoPrestamo(Prestamo p_prestamo){
         this.ultimoPrestamo=p_prestamo;
     }
     
@@ -71,7 +72,7 @@ public class Libro
     public int getAnio(){
         return this.anio;
     }
-    public Prestamo getPrestamo(){
+    public Prestamo getUltimoPrestamo(){
         return this.ultimoPrestamo;
     }
     
@@ -93,7 +94,7 @@ public class Libro
  * 
 */
     public boolean prestado(){
-        if(this.getPrestamo()==null){
+        if(this.getUltimoPrestamo()==null){
            return false;
         }else{
             return true;
@@ -118,10 +119,10 @@ public class Libro
  * en resumen: utilizar este metodo dentro de un bloque seguro try-catch.
  */
    public Prestamo ultimoPrestamo() throws LibroNoPrestadoException {
-    if (this.getPrestamo() == null) {
+    if (this.getUltimoPrestamo() == null) {
         throw new LibroNoPrestadoException("El libro no ha sido solicitado para préstamo");
     }
-    return this.getPrestamo();
+    return this.getUltimoPrestamo();
     }
     
  /**
