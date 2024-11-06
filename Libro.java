@@ -29,7 +29,7 @@ public class Libro
         this.setEdicion(p_edicion);
         this.setEditorial(p_editorial);
         this.setAnio(p_anio);
-        this.setUltimoPrestamo(null)
+        this.setUltimoPrestamo(null);
     }
     
      public Libro(String p_titulo,int p_edicion,String p_editorial,int p_anio,Prestamo p_prestamo){
